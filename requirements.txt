@@ -1,0 +1,64 @@
+# ══════════════════════════════════════════════════════════════
+# requirements.txt — Python Dependencies for TubeWise
+# ══════════════════════════════════════════════════════════════
+# Install all dependencies at once with:
+#   pip install -r requirements.txt
+#
+# Each package is explained below so you know what it does
+# and why it's needed.
+# ══════════════════════════════════════════════════════════════
+
+# ── LangChain (AI Framework) ──
+# LangChain is the framework that ties everything together.
+# It provides connectors for LLMs, text splitters, prompt management, etc.
+# Think of it as the "glue" between YouTube, Bedrock, and Notion.
+langchain>=0.3.0
+
+# LangChain's AWS integration — specifically the ChatBedrock class
+# that lets us call Claude on AWS Bedrock through LangChain's interface.
+langchain-aws>=0.2.0
+
+# LangChain community extensions — additional utilities and integrations
+# that aren't in the core package.
+langchain-community>=0.3.0
+
+# LangChain's text splitting utilities — used for the map-reduce strategy
+# to break long transcripts into manageable chunks.
+langchain-text-splitters>=0.3.0
+
+# ── AWS SDK ──
+# boto3 is AWS's official Python SDK. LangChain uses it under the hood
+# to make API calls to Bedrock. Also handles AWS credential management.
+# You probably already have this if you work with AWS.
+boto3>=1.34.0
+
+# ── YouTube ──
+# youtube-transcript-api: Fetches video captions/subtitles from YouTube
+# WITHOUT needing a YouTube Data API key. Works with auto-generated
+# and manually created captions.
+youtube-transcript-api>=0.6.2
+
+# yt-dlp: The most reliable YouTube metadata extractor.
+# Used to fetch video title, channel name, and duration.
+# Unlike pytube which breaks frequently, yt-dlp is actively maintained
+# and handles YouTube's constant changes.
+yt-dlp>=2024.0.0
+
+# ── Notion ──
+# notion-client: Official Notion Python SDK for creating pages,
+# adding blocks, and managing content via the Notion API.
+notion-client>=2.2.0
+
+# ── Utilities ──
+# python-dotenv: Reads .env files and loads them as environment variables.
+# This is how we keep API keys and tokens out of the code.
+python-dotenv>=1.0.0
+
+# pydantic: Data validation library used by LangChain internally.
+# You don't use it directly, but LangChain needs it.
+pydantic>=2.0.0
+
+# ── Testing ──
+# pytest: Testing framework for running unit tests.
+# Install with: pip install -r requirements.txt
+pytest>=7.0

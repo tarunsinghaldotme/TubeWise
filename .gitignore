@@ -1,0 +1,48 @@
+# ══════════════════════════════════════════════════════════════
+# TubeWise .gitignore
+# ══════════════════════════════════════════════════════════════
+
+# ── Secrets & Config (NEVER commit these) ──
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ── PyInstaller Build Artifacts ──
+dist/
+build/
+*.spec
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+*.whl
+
+# ── Virtual Environments ──
+venv/
+.venv/
+env/
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── TubeWise Output Files ──
+summary_*.md
+CLAUDE.md
+
+# ── TubeWise Runtime Files ──
+queue.db
+*.log
+
+# ── Testing ──
+.pytest_cache/
